@@ -1,0 +1,119 @@
+﻿<!--
+    Copyright (C) 2011 http://code.google.com/p/monkeylabs
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="css/popup.css" type="text/css" charset="utf-8" />		
+		<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+		<script src="js/popup.js" type="text/javascript"></script>	
+	</head>
+	
+	<body>
+		<div id="popup">
+			<header>
+				<h2>KStock</h2>
+			</header>
+			
+			<div id="contents">
+				<div id="timeInfo" class="right">
+					<span class="time">-</span>
+					<img id="loader" class="no-display" src="images/loader.gif" />
+				</div>
+				<div class="animateMsg">
+				</div>
+				<nav>
+					<canvas id="nav"></canvas>
+				</nav>
+				<section id="pannel">
+					<section id="home">
+						<div id="kospi" class="item highlight clickable">
+							<div id="chart-container" class="default-cursor">
+								<img class="chart" src="images/forbidden198x140.png" />
+								<img class="chart no-display" src="images/forbidden198x140.png" />
+								<img class="chart no-display" src="images/forbidden198x140.png" />
+							</div>
+							<div class="title">
+								코스피
+							</div>
+							<div class="text">
+								<span class="price">0</span>
+								<span>▼0<br/>0%</span><br/>
+								<div class="money-summary">
+									<span class="sub-title text-green">외인</span>
+									<span class="money">0억</span>
+									<span class="sub-title text-green">기관</span>
+									<span class="money">0억</span><br/>
+									<span class="sub-title text-green">개인</span>
+									<span class="money">0억</span>
+								</div>
+							</div>
+						</div>
+						<div id="kosdaq" class="item clickable">
+							<div class="title">
+								코스닥
+							</div>
+							<div class="text">
+								<span class="price">0</span>   
+								<span>▼0<br/>0%</span>
+								<div class="money-summary no-display">
+									<span class="sub-title text-green">외인</span>
+									<span class="money">0억</span>
+									<span class="sub-title text-green">기관</span>
+									<span class="money">0억</span><br/>
+									<span class="sub-title text-green">개인</span>
+									<span class="money">0억</span>
+								</div>
+							</div>
+						</div>
+						<div id="future" class="item clickable">
+							<div class="title">
+								선물
+							</div>
+							<div class="text">
+								<span class="price">0</span>   
+								<span>▼0<br/>0%</span>
+								<div class="money-summary no-display">
+									<span class="sub-title text-green">외인</span>
+									<span class="money">0계약</span>
+									<span class="sub-title text-green">기관</span>
+									<span class="money">0계약</span><br/>
+									<span class="sub-title text-green">개인</span>
+									<span class="money">0계약</span>
+								</div>
+							</div>
+						</div>
+					</section> <!-- home -->
+					
+					<section id="favorite">
+						<div>
+							<input type="text" name="input" id="search-input" placeholder="종목명">  
+							<img id="search-button" class="clickable" src="images/search24x24.png">
+						</div>
+
+						<div id="item-container">						
+						</div>						
+					</section> <!-- favorite -->					
+				</section> <!-- pannel -->
+			<footer>
+				<h6>Powered by <a href="http://www.daum.net">Daum</a> | Icons by <a href="http://dryicons.com">DryIcons</a> & <a href="http://www.axialis.com">Axialis Team</a></h6>
+			</footer>
+		</div> <!-- popup -->
+	</body>
+</html>

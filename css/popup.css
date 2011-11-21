@@ -1,0 +1,211 @@
+﻿/*
+    Copyright (C) 2011 http://code.google.com/p/monkeylabs
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+body {
+	min-width: 382px;
+	font-family: "맑은 고딕", sans-serif, gulim;
+	font-size: 12px;
+	color: lightgray;
+	margin: 0px 0px;
+}
+
+header {
+	text-align: center;
+	color: white;
+	background-color: #F3A01E;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;	
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;	
+}
+
+footer {
+	margin-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: #999;
+}
+
+section {
+	position: relative;
+}
+
+section .item {
+	margin: 3px 0px;
+}
+
+section .title {
+	color: #DFC484;
+	font-weight: bold;
+}
+
+section .text {
+	font-size: 12px;
+}
+
+span {
+	display: inline-block;
+	min-width: 20px;
+	text-align: left;
+	font-size: 11px;
+}
+
+.sub-title, .money {
+	font-size: 10px;
+}
+
+.price {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+header > h2 {
+	margin: 0px;
+	padding: 0px;
+}
+
+footer > h6 {
+	margin: 0px;
+	padding: 0px;
+}
+
+#contents {
+	margin: 0px;
+	padding: 0px 8px;
+	background-color: #333333;
+	-webkit-border-bottom-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;	
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;		
+}
+
+#nav {
+	padding-top: 10px;
+}
+
+.highlight {
+	background-color: #555555;
+}
+
+#timeInfo {
+	padding-top: 10px;
+	padding-right: 2px;
+}
+
+#chart-container {
+	float: right;
+	padding: 2px;
+	width: 204px;
+	background-color: white;
+	text-align: center;
+	border: 3px solid #4EBAFF;
+	-webkit-border-radius: 7px 7px 7px 7px;
+}
+
+.chart {
+	margin-top: 2px;
+}
+
+#favorite {
+	position: absolute;
+	min-width: 364px;
+	left: 372px;
+	top: 0px;
+	padding: 0px 8px;
+}
+
+#favorite .item {
+	display: inline-block;
+	min-width: 118px;
+	max-width: 118px;
+}
+
+#favorite .delete-icon {
+	float: right;
+	display: none;
+	cursor: pointer;
+}
+
+#favorite .title {
+	width: 102px;
+}
+
+#favorite .price {
+	min-width: 118px;
+	max-width: 118px;
+}
+
+#item-container {
+	overflow: auto;
+	height: 138px;
+}
+
+#search-button {
+	float: right;
+	margin-top: 1px;
+}
+
+input {
+	width: 330px;
+	margin-bottom: 5px;
+}
+
+.animateMsg {
+	position: absolute;
+	z-index: 100000000;
+	width: 294px;
+	top: 110px;
+	margin: 10px 20px;
+	padding: 10px 10px;
+	text-align: center;
+	display: none;
+	color: white;
+	border: 2px solid #A9A9A9;
+	background-color: #454545;
+	-webkit-border-radius: .8em;
+	border-radius: .8em;
+	opacity: 0.9;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+/* 스크롤 바 */
+::-webkit-scrollbar {
+	width: 8px; 
+	height: 8px; 
+	border: 3px solid #fff; 
+	-webkit-border-radius: 8px; 
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #efefef; 
+	-webkit-border-radius: 10px; 
+	border-radius:10px; 
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.2)
+}
+
+::-webkit-scrollbar-thumb {
+	height: 50px; 
+	width: 50px; 
+	background: rgba(0,0,0,.2); 
+	-webkit-border-radius: 8px; 
+	border-radius: 8px; 
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1)
+}

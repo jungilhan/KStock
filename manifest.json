@@ -1,0 +1,21 @@
+﻿ {
+	"name": "KStock",
+	"description" : "코스피/코스닥 및 관심있는 증권 정보를 이제 크롬 브라우저에서 실시간으로 확인하세요.",
+	"version": "1.0.0",
+	"homepage_url": "http://jungilhan.github.com/kstock/",
+	"icons":{
+		"16" : "images/icon16x16.png",
+		"24" : "images/icon24x24.png",
+		"48" : "images/icon48x48.png",
+		"128" : "images/icon128x128.png"
+	},  
+	"browser_action": {
+		"default_title": "KStock",
+		"default_icon": "images/icon24x24.png",
+		"popup": "popup.html"
+	},	
+	"permissions":[
+		"http://m.stock.daum.net/*",
+		"http://provider.finance.daum.net/*"
+	]
+}
