@@ -36,6 +36,11 @@
 			hideAnimateMsg(true);			
 			startRefreshTimer();
 			startRollingTimer(1);
+
+			// MAC에서 레이아웃 버그 예외처리
+			if (window.navigator.platform.toUpperCase().indexOf("MAC") !== -1) {
+				$(".price").css("font-size", "18px");
+			}
 		}
 			
 	});
@@ -220,7 +225,7 @@
 
 	// 페이지 로드 시 input 요소가 포커스를 가지면서 발생하는 현상 예외 처리
 	$("#search-input").hide();
-	window.setTimeout(function(){
+	window.setTimeout(function() {
 		$("#search-input").show();	
 	}, 500);
  }
