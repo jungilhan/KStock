@@ -217,6 +217,12 @@
 	
 	// 사용자 Favorite 데이터 로드	
 	loadUserFavoriteData();
+
+	// 페이지 로드 시 input 요소가 포커스를 가지면서 발생하는 현상 예외 처리
+	$("#search-input").hide();
+	window.setTimeout(function(){
+		$("#search-input").show();	
+	}, 500);
  }
  
  var startRefreshTimer = function() {	
