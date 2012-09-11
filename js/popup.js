@@ -38,8 +38,11 @@
 			startRollingTimer(1);
 
 			// MAC에서 레이아웃 버그 예외처리
-			if (window.navigator.platform.toUpperCase().indexOf("MAC") !== -1) {
-				$(".price").css("font-size", "18px");
+			if (getPlatform().indexOf("MAC") !== -1) {
+				var $prices = $("#home .price");
+				$prices.each(function(index) {
+					$(this).addClass("price_mac").removeClass("price");
+				});
 			}
 		}
 			
@@ -423,7 +426,7 @@ var onRequestItemSummary = function(html, data, isAppend) {
 		fluc: $(html).find("span.price_fluc").text(), 
 		rate: $(html).find("span.rate_fluc").text(),
 		url:  PC_DAUM_STOCK_URL + stockCode
-	};	
+	};
 	
 	if (isAppend) {
 		data.push(item);
@@ -487,12 +490,12 @@ var displayHomeData = function() {
 	
 	// 투자자별 거래 동향
 	var $money = $("#kospi .money");
-	$money.eq(0).text(kospiInfo.money[0].foreigner);
+	$money.eq(0).text(kospiInfo.money[0].individual);
 	$money.eq(1).text(kospiInfo.money[0].organization);
-	$money.eq(2).text(kospiInfo.money[0].individual);		
-	styleTextColor2(kospiInfo.money[0].foreigner, $money.eq(0));
+	$money.eq(2).text(kospiInfo.money[0].foreigner);		
+	styleTextColor2(kospiInfo.money[0].individual, $money.eq(0));
 	styleTextColor2(kospiInfo.money[0].organization, $money.eq(1));
-	styleTextColor2(kospiInfo.money[0].individual, $money.eq(2));			
+	styleTextColor2(kospiInfo.money[0].foreigner, $money.eq(2));			
 	
 	//////////////////////////////////////////////////////////////
 	// 코스닥 정보 
@@ -503,12 +506,12 @@ var displayHomeData = function() {
 
 	// 투자자별 거래 동향
 	$money = $("#kosdaq .money");
-	$money.eq(0).text(kosdaqInfo.money[0].foreigner);
+	$money.eq(0).text(kosdaqInfo.money[0].individual);
 	$money.eq(1).text(kosdaqInfo.money[0].organization);
-	$money.eq(2).text(kosdaqInfo.money[0].individual);
-	styleTextColor2(kosdaqInfo.money[0].foreigner, $money.eq(0));
+	$money.eq(2).text(kosdaqInfo.money[0].foreigner);
+	styleTextColor2(kosdaqInfo.money[0].individual, $money.eq(0));
 	styleTextColor2(kosdaqInfo.money[0].organization, $money.eq(1));
-	styleTextColor2(kosdaqInfo.money[0].individual, $money.eq(2));
+	styleTextColor2(kosdaqInfo.money[0].foreigner, $money.eq(2));
 	
 	//////////////////////////////////////////////////////////////
 	// 선물 정보
@@ -519,12 +522,12 @@ var displayHomeData = function() {
 	
 	// 투자자별 거래 동향
 	$money = $("#future .money");
-	$money.eq(0).text(futureInfo.money[0].foreigner);
+	$money.eq(0).text(futureInfo.money[0].individual);
 	$money.eq(1).text(futureInfo.money[0].organization);
-	$money.eq(2).text(futureInfo.money[0].individual);		
-	styleTextColor2(futureInfo.money[0].foreigner, $money.eq(0));
+	$money.eq(2).text(futureInfo.money[0].foreigner);		
+	styleTextColor2(futureInfo.money[0].individual, $money.eq(0));
 	styleTextColor2(futureInfo.money[0].organization, $money.eq(1));
-	styleTextColor2(futureInfo.money[0].individual, $money.eq(2));
+	styleTextColor2(futureInfo.money[0].foreigner, $money.eq(2));
 	
 	// 차트 정보 업데이트
 	var $chart = $("#kospi .chart");
@@ -572,9 +575,14 @@ var addFavoriteItemOnView = function(name, price, fluc, rate) {
 	var $deleteIcon = $("<img />").addClass("delete-icon").attr("src", "images/delete16x16-0.png");
 	var $title = $("<div></div>").addClass("title").addClass("text-ellipsis").text(name);
 	var $summaryContainer = $("<div></div>").addClass("text");
-	var $price = $("<span></span>").addClass("price").html(price + "<br/>");
-	var $rate = $("<span></span>").text(fluc + " "+ rate);	
-		
+	var $price = $("<span></span>").addClass("price").html(price).css("display", "block");
+	var $rate = $("<span></span>").text(fluc + " "+ rate);
+
+	// MAC에서 레이아웃 버그 예외처리
+	if (getPlatform().indexOf("MAC") !== -1) {
+		$price.addClass("price_favorite_mac").removeClass("price");
+	}
+
 	$item.append($deleteIcon).append($title).append($summaryContainer.append($price).append($rate));	
 	$("#item-container").append($item);
 	
@@ -934,6 +942,10 @@ var hideAnimateMsg = function(effect) {
 		effect ? $('.animateMsg').fadeOut(1000) : $('.animateMsg').hide();		
 	}
 }
+
+var getPlatform = function() {
+	return window.navigator.platform.toUpperCase();	
+}
 	
 /***************************************************************
  * 사용자 데이터 저장 관련 코드
@@ -971,4 +983,5 @@ var hideAnimateMsg = function(effect) {
 	console.log("[LOADFAVORITEITEMS]" + "[" + localStorage.length + "]" + codeArray);
 	return codeArray;
  }
+
  

@@ -75,6 +75,16 @@ span {
 	font-weight: 700;
 }
 
+.price_mac {
+	font-size: 21px;
+	font-weight: 700;
+}
+
+.price_favorite_mac {
+	font-size: 19px;
+	font-weight: 700;
+}
+
 header > h2 {
 	margin: 0px;
 	padding: 0px;
