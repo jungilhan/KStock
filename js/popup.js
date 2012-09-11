@@ -281,7 +281,8 @@
 		var $item = $("#home .item");
 		var index = 0;
 		
-		for (index; index < $item.length; index++) {
+		var length = $item.length;
+		for (index; index < length; index++) {
 			if ($item.eq(index).hasClass("highlight"))
 				break;
 		}
@@ -459,7 +460,8 @@ var request = function() {
 		break;
 		
 	case MENU_FAVORITE:
-		for (var index = 0; index < favoriteItems.length; index++) {
+		var length = favoriteItems.length;
+		for (var index = 0; index < length; index++) {
 			requestAjax(M_DAUM_STOCK_URL + favoriteItems[index].code, null, REQUEST_ITEM_SUMMARY);
 		}
 		break;	
@@ -952,8 +954,9 @@ var getPlatform = function() {
  */
  var loadUserFavoriteData = function() {
  	var userItems = loadFavoriteItems();
-	
-	for (var index = 0; index < userItems.length; index++) {		
+	var length = userItems.length;
+
+	for (var index = 0; index < length; index++) {		
 		var queryUrl = M_DAUM_STOCK_URL + userItems[index];
 		requestAjax(queryUrl, favoriteItems, REQUEST_ITEM_SUMMARY_ADD);
 	}
@@ -966,7 +969,8 @@ var getPlatform = function() {
  var saveFavoriteItems = function() {	
 	clearUserFavoriteData();
 	
-	for (var index = 0; index < favoriteItems.length; index++) {
+	var length = favoriteItems.length;
+	for (var index = 0; index < length; index++) {
 		localStorage.setItem("item" + index, favoriteItems[index].code);
 	}
  }
@@ -974,7 +978,8 @@ var getPlatform = function() {
  var loadFavoriteItems = function() {
 	var codeArray = new Array();
 	
-	for (var index = 0; index < localStorage.length; index++) {
+	var length = localStorage.length;
+	for (var index = 0; index < length; index++) {
 		var code = localStorage.getItem("item" + index)
 		if (code.length > 0)
 			codeArray.push(code);		
