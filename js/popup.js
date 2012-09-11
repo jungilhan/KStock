@@ -334,7 +334,7 @@ var requestAjax = function(url, data, type) {
 		}, 
 		error: function(xhr, ajaxOptions, thrownError) {
 			animateMsg("[" + xhr.statusText + "] " + "데이터를 로드하지 못했습니다.<br /> \
-			인터넷 연결 확인 후 다시 실행해보세요.", 60000);
+			인터넷 연결을 확인하세요.", 60000);
 		}
 	});
 }
@@ -411,7 +411,7 @@ var onRqeuestItemCode = function(html, data) {
 			requestAjax(queryUrl, favoriteItems, REQUEST_ITEM_SUMMARY_ADD);
 		}
 	} else {
-		animateMsg("관련 데이터가 존재하지 않습니다.<br />다시 입력해주세요.", 2000);
+		animateMsg("관련 데이터가 존재하지 않습니다.", 2000);
 	}
 }
 
