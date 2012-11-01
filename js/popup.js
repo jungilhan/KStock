@@ -341,30 +341,30 @@ var requestAjax = function(url, data, type) {
 
 var onRequestStockSummary = function(html, data) {
 	// 지수
-    var regExp = /<em.*"price".*/g;
-    var tmp = html.match(regExp) + "";
+	var regExp = /<em.*"price".*/g;
+	var tmp = html.match(regExp) + "";
 	 
-	regExp = /<em.*">|<.*em>/g;
+	regExp = /<em.*">|<font.+?>|.+font?>|<.em>/g;
 	var price = tmp.replace(regExp, '');
 
 	// 등락 지수
-    regExp = /<em.*"price_fluc".*/g;
-    tmp = html.match(regExp) + "";
+	regExp = /<em.*"price_fluc".*/g;
+	tmp = html.match(regExp) + "";
 	 
 	regExp = /<em.*">|<.span>|<.em>/g;
 	var fluc = tmp.replace(regExp, '');
-	
+
 	// 등락 퍼센티지
-    regExp = /<em.*"rate_flucs".*/g;
-    tmp = html.match(regExp) + "";
+	regExp = /<em.*"rate_flucs".*/g;
+	tmp = html.match(regExp) + "";
 	 
 	regExp = /<em.*">|<.*em>/g;
 	var rate = tmp.replace(regExp, '');
-	
+
 	// 투자자별 거래량
-    regExp =  /<em.*"price\s.*".*em>/g;
-    tmp = html.match(regExp) + "";
-	
+	regExp =  /<em.*"price\s.*".*em>/g;
+	tmp = html.match(regExp) + "";
+
 	regExp = /[^0-9|,억계약-]/g;
 	var money = tmp.replace(regExp, '');
 	money = money.replace(/억,/g, "억|");
@@ -374,7 +374,7 @@ var onRequestStockSummary = function(html, data) {
 	// 시간 정보
 	regExp = /<span.*timeInfo.*span>/g
 	tmp = html.match(regExp) + "";
-	
+
 	regExp = /<span.*date.>|<span.*time.>|<.span>|<span.*msg.>|\s/g;
 	var time = tmp.replace(regExp, '');
 		
@@ -382,9 +382,9 @@ var onRequestStockSummary = function(html, data) {
 	var chartTime = ($(html).find("#1dChart").attr("src"));
 	regExp = /date=[0-9]*/g;
 	chartTime = chartTime.match(regExp) + "";
-	
+
 	console.log(time);
-	
+
 	data.price = price;
 	data.fluc = fluc;
 	data.rate = rate;
