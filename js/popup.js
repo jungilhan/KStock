@@ -375,7 +375,7 @@ var onRequestStockSummary = function(html, data) {
 	regExp = /<span.*timeInfo.*span>/g
 	tmp = html.match(regExp) + "";
 
-	regExp = /<span.*date.>|<span.*time.>|<.span>|<span.*msg.>|\s/g;
+	regExp = /<.span>|<span.*?>|\s/g;
 	var time = tmp.replace(regExp, '');
 		
 	// 차트 시간 정보
