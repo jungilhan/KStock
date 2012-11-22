@@ -16,7 +16,7 @@ KStock은 Daum 증권(m.stock.daum.net) 페이지를 스크래핑해서 정보�
  * Step 5: "압축해제된 확장 프로그램 로드" 클릭
  * Step 6: KStock 소스 코드 폴더 선택
 
-#시연영상
+##시연영상
  http://www.youtube.com/watch?feature=player_embedded&v=Whon8y0GZ8Q
  
 ##스크린샷
